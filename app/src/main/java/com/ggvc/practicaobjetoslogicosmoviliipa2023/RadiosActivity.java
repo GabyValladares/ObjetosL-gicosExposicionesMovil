@@ -37,7 +37,6 @@ public class RadiosActivity extends AppCompatActivity {
             }
         });
     }
-
     private void showSelection() {
         // Obtener el ID de la opción seleccionada
         int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -54,7 +53,7 @@ public class RadiosActivity extends AppCompatActivity {
             message = "NINGUNA OPCION SELECCIONADA";
         }
 
-        // Mostrar un Toast con el mensaje
+
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
