@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class menu extends AppCompatActivity {
+public class RadioButton extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.menu.menu);
+        setContentView(R.layout.activity_radio_button);
     }
 }
