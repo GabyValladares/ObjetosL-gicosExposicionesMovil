@@ -1,61 +1,70 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 
-import java.util.Calendar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText txtCedula, txtNombre, txtPlaca, txtFbVehiculo, txtMarca, txtColor, txtTipo, txtValor, txtMultas;
+    private Toolbar toolbar1;
 
-    private Button btnEnviar;
+    private ProgressBar progressBar;
+    private Button startButton;
+    private int progressStatus = 0;
+    private Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtCedula = findViewById(R.id.txtCedula);
-        txtNombre = findViewById(R.id.txtNombre);
-        txtPlaca = findViewById(R.id.txtPlaca);
-        txtFbVehiculo = findViewById(R.id.txtAnio);
-        txtMarca = findViewById(R.id.txtMarca);
-        txtColor = findViewById(R.id.txtColor);
-        txtTipo = findViewById(R.id.txtTipoV);
-        txtValor = findViewById(R.id.TXTvALOR);
-        txtMultas = findViewById(R.id.txtMultas);
-        btnEnviar = findViewById(R.id.btnCalcular);
+        toolbar1 = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar1);
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        // ProgressBar
+        progressBar = findViewById(R.id.progressBar);
+        startButton = findViewById(R.id.startButton);
+
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String cedula = txtCedula.getText().toString();
-                String nombre = txtNombre.getText().toString();
-                String placa = txtPlaca.getText().toString();
-                String fbVehiculo = txtFbVehiculo.getText().toString();
-                String marca = txtMarca.getText().toString();
-                String color = txtColor.getText().toString();
-                String tipo = txtTipo.getText().toString();
-                String valor = txtValor.getText().toString();
-                String multas = txtMultas.getText().toString();
+                // Inicia un hilo para simular un proceso en segundo plano
+                new Thread(new Runnable() {
+                    public void run() {
 
-                Intent intent = new Intent(MainActivity.this, Pago_Activity.class);
-                intent.putExtra("cedula", cedula);
-                intent.putExtra("nombre", nombre);
-                intent.putExtra("placa", placa);
-                intent.putExtra("fbVehiculo", fbVehiculo);
-                intent.putExtra("marca", marca);
-                intent.putExtra("color", color);
-                intent.putExtra("tipo", tipo);
-                intent.putExtra("valor", valor);
-                intent.putExtra("multas", multas);
-                startActivity(intent);
+                        // Lógica para simular el progreso...
+                        while (progressStatus < 100) {
+                            progressStatus += 1;
+
+                            // Actualiza la barra de progreso en el hilo principal
+                            handler.post(new Runnable() {
+                                public void run() {
+                                    progressBar.setProgress(progressStatus);
+                                }
+                            });
+
+                            try {
+                                // Agrega una pequeña pausa para simular el progreso
+                                Thread.sleep(50);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }).start();
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
-    }
+}

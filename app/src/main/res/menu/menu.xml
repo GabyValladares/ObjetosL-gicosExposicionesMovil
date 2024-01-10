@@ -6,7 +6,7 @@
         android:title="OPC 1"
         android:icon="@drawable/baseline_add_24"
         android:id="@+id/opc1"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         app:itemIconTint="@color/black"
         android:titleTextColor="#000000"
 
@@ -35,4 +35,5 @@
 
 
         />
+
 </menu>

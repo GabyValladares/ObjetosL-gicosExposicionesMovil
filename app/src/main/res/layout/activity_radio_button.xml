@@ -31,15 +31,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Opción 3" />
-    </RadioGroup>
 
-    <Button
-        android:id="@+id/btnMostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mostrar selección"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="16dp" />
+        <Button
+            android:id="@+id/btnMostrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mostrar selección" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

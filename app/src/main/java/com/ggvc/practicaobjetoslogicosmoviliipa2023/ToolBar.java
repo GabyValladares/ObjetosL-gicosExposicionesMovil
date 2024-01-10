@@ -1,14 +1,14 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class Jeferson extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ToolBar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jeferson);
+        setContentView(R.layout.activity_tool_bar);
     }
 }
