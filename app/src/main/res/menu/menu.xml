@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="ejemplo 1"
+        android:icon="@drawable/baseline_add_to_photos_24"
+        android:id="@+id/ejemplo"
+        app:itemIconTint="@color/black"
+        app:showAsAction="ifRoom" />
+
+
+
+
+
     <item
         android:title="OPC 1"
         android:icon="@drawable/baseline_add_24"
         android:id="@+id/opc1"
-        app:showAsAction="never"
+        app:showAsAction="ifRoom"
         app:itemIconTint="@color/black"
         android:titleTextColor="#000000"
 
@@ -34,4 +46,5 @@
 
 
         />
+
 </menu>
