@@ -11,6 +11,6 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:textColor="@color/black"
-        android:text="APP TOOLBAR"/>
+        android:text=" TOOLBAR"/>
 
 </androidx.appcompat.widget.Toolbar>

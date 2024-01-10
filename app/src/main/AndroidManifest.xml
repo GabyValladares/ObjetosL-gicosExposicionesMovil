@@ -13,21 +13,29 @@
         android:theme="@style/Theme.PracticaObjetosLogicosMovilIIPA2023"
         tools:targetApi="34">
         <activity
+            android:name=".SUMA"
+            android:exported="false" />
+        <activity
+            android:name=".RESTA"
+            android:exported="false" />
+        <activity
+            android:name=".Said"
+            android:exported="false" />
+        <activity
             android:name=".Pago_Activity"
             android:exported="false" />
         <activity
             android:name=".ToolBar"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".Almeida"
-            android:exported="false"/>
-
+            android:exported="false" />
     </application>
 
 </manifest>
