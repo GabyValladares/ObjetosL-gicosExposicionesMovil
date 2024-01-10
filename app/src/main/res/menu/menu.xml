@@ -3,6 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:title="ejemplo 1"
+        android:icon="@drawable/baseline_add_to_photos_24"
+        android:id="@+id/ejemplo"
+        app:itemIconTint="@color/black"
+        app:showAsAction="ifRoom" />
+
+
+
+
+
+    <item
         android:title="OPC 1"
         android:icon="@drawable/baseline_add_24"
         android:id="@+id/opc1"
