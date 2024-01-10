@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ActionMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/opc1"
+        android:layout_width="111dp"
+        android:icon="@drawable/baseline_egg_24"
+        android:title="OPC 1"
+        android:titleTextColor="#000000"
+        app:itemIconTint="@color/black"
+
+
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/opc2"
+        android:icon="@drawable/baseline_extension_3"
+        android:title="OPC 2"
+        android:titleTextColor="#000000"
+        app:itemIconTint="@color/black"
+        app:showAsAction="never"
+
+
+        />
+
+    <item
+        android:id="@+id/opc3"
+        android:title="OPC 3"
+        android:icon="@drawable/baseline_favorite_border_24"
+        app:showAsAction="never"
+        app:itemIconTint="@color/black"
+        android:titleTextColor="#000000"/>
+
+</ActionMenuView>
