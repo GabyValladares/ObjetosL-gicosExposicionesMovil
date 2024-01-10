@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="lblPago" type="id" />
+    <item name="lblCedula" type="id" />
+    <item name="txtCedula" type="id" />
+    <item name="lblPropietario" type="id" />
+    <item name="txtNombre" type="id" />
+    <item name="lblPlaca" type="id" />
+    <item name="txtPlaca" type="id" />
+    <item name="lblFabricacion" type="id" />
+    <item name="txtAnio" type="id" />
+</resources>

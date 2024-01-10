@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PracticaObjetosLogicosMovilIIPA2023"
         tools:targetApi="34">
         <activity
+            android:name=".Pago_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".RadioButton"
             android:exported="false" />
         <activity
@@ -20,6 +26,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
