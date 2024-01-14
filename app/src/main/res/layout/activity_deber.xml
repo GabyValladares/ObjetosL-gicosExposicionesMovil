@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".deber">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="826dp"
+        android:max="100"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/tipo_vehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="346dp"
+        android:text="Tipo de Vehículo" />
+
+    <TextView
+        android:id="@+id/valor_vehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="291dp"
+        android:layout_marginBottom="229dp"
+        android:text="Valor del Vehículo" />
+
+    <TextView
+        android:id="@+id/multas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="161dp"
+        android:text="si posee o no multas" />
+
+    <TextView
+        android:id="@+id/cedula"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="730dp"
+        android:text="Número de Cédula del Propietario" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="233dp"
+        android:layout_marginBottom="658dp"
+        android:text="Nombres del Propietario" />
+
+    <TextView
+        android:id="@+id/placa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="591dp"
+        android:text="Número de placa" />
+
+    <TextView
+        android:id="@+id/aniodefabr"
+        android:layout_width="146dp"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="232dp"
+        android:layout_marginBottom="509dp"
+        android:text="Año de Fabricación del Vehículo" />
+
+    <TextView
+        android:id="@+id/marca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="328dp"
+        android:layout_marginBottom="458dp"
+        android:text="Marca" />
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="321dp"
+        android:layout_marginBottom="393dp"
+        android:text="Color" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="47dp"
+        android:text="Ingresar" />
+
+    <EditText
+        android:id="@+id/txt_numeroCedula"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="725dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txt_nombrepropietario"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="649dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txt_numeroPlaca"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="587dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txt_anioFrabri"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="514dp"
+        android:ems="10"
+        android:inputType="text" />
+
+
+
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="444dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioToyota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toyota" />
+
+        <RadioButton
+            android:id="@+id/radioSuzuki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suzuki" />
+
+        <!-- Agrega más RadioButtons según las marcas que necesitas -->
+    </RadioGroup>
+
+
+    <EditText
+        android:id="@+id/txt_color"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="382dp"
+        android:ems="10"
+        android:inputType="text" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupTipoVehiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="293dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioJeep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jeep" />
+
+        <RadioButton
+            android:id="@+id/radioCamioneta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camioneta" />
+
+        <RadioButton
+            android:id="@+id/radioVitara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vitara" />
+
+        <RadioButton
+            android:id="@+id/radioAutomovil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Automóvil" />
+
+    </RadioGroup>
+
+
+
+
+
+
+
+    <EditText
+        android:id="@+id/txt_multas"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="153dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/txt_valorvehiculo"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="228dp"
+        android:ems="10"
+        android:inputType="text" />
+
+</RelativeLayout>

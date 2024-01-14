@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".validacion">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="787dp"
+        android:text="DATOS DE PAGOS"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="153dp"
+        android:layout_height="59dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="476dp"
+        android:text=" pagar por matriculación el vehículo" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="287dp"
+        android:layout_marginBottom="605dp"
+        android:text="Cedula" />
+
+    <TextView
+        android:id="@+id/lbl_nombre"
+        android:layout_width="84dp"
+        android:layout_height="29dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="288dp"
+        android:layout_marginBottom="676dp"
+        android:text="Nombre" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="407dp"
+        android:text="Pago de multas" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="243dp"
+        android:layout_marginBottom="329dp"
+        android:text="matriculacion" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="241dp"
+        android:layout_marginBottom="235dp"
+        android:text="Pago por Contaminacion" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="238dp"
+        android:layout_marginBottom="154dp"
+        android:text="Total de Pago" />
+
+    <EditText
+        android:id="@+id/txt_toalmatricula"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="157dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_contaminacion"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="230dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_renovacion"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="317dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_pagomultas"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="399dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_ingresocedula"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="486dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/txt_cedula33"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="591dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="56dp"
+        android:text="Regresar" />
+
+    <EditText
+        android:id="@+id/txt_nombreCliente"
+        android:layout_width="177dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="674dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+</RelativeLayout>
+

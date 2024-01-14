@@ -19,7 +19,7 @@ public class RadiosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.radios);
 
         // Obtener referencias de los elementos en el layout
         radioGroup = findViewById(R.id.radioGroup);
