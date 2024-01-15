@@ -6,19 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <include layout="@layout/toolbar"/>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="357dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+    <include layout="@layout/toolbar" />
 
     <Button
         android:id="@+id/startButton"
@@ -29,31 +17,133 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintVertical_bias="0.879" />
 
-    <RadioGroup
-        android:layout_width="232dp"
-        android:layout_height="112dp"
+    <!-- Layout para Ficha Vehicular -->
+
+    <LinearLayout
+        android:id="@+id/datosPersonalesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379">
+        app:layout_constraintVertical_bias="0.332">
 
-        <RadioButton
-            android:id="@+id/radioButton"
+        <!-- Agrega tus elementos para Datos Personales aquí -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos Personales" />
+
+        <EditText
+            android:id="@+id/edNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TOYOTA" />
+            android:hint="Nombre" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
+        <EditText
+            android:id="@+id/edCedula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SUZUKI" />
+            android:hint="Cédula" />
 
+        <!-- Agrega más elementos según sea necesario -->
 
-    </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fichaVehicularLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423">
+
+        <!-- Agrega tus elementos para Ficha Vehicular aquí -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ficha Vehicular" />
+
+        <EditText
+            android:id="@+id/edAnioFabricacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Año de Fabricación" />
+
+        <EditText
+            android:id="@+id/edValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Valor del Coche" />
+
+        <EditText
+            android:id="@+id/edPlaca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Placa" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupMultas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonSi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sí" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroupMarca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonToyota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toyota" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSuzuki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suzuki" />
+
+        </RadioGroup>
+
+        <!-- Agrega más elementos según sea necesario -->
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="357dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

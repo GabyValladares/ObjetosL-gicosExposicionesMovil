@@ -1,50 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="ejemplo 1"
-        android:icon="@drawable/baseline_add_to_photos_24"
-        android:id="@+id/ejemplo"
-        app:itemIconTint="@color/black"
-        app:showAsAction="ifRoom" />
-
-
-
-
-
-    <item
-        android:title="OPC 1"
-        android:icon="@drawable/baseline_add_24"
-        android:id="@+id/opc1"
-        app:showAsAction="ifRoom"
-        app:itemIconTint="@color/black"
-        android:titleTextColor="#000000"
-
-
-        />
-
-
-    <item
+        android:id="@+id/action_ficha_vehicular"
         android:title="FICHA VEHICULAR"
         android:icon="@drawable/baseline_add_24"
-        android:id="@+id/opc2"
         app:showAsAction="never"
         app:itemIconTint="@color/black"
-        android:titleTextColor="#000000"
-
-
-        />
+        android:titleTextColor="#000000" />
 
     <item
-        android:id="@+id/opc3"
+        android:id="@+id/action_datos_personales"
         android:title="DATOS PERSONALES"
         android:icon="@drawable/baseline_add_24"
         app:showAsAction="never"
         app:itemIconTint="@color/black"
-        android:titleTextColor="#000000"
-
-
-        />
+        android:titleTextColor="#000000" />
 
 </menu>
