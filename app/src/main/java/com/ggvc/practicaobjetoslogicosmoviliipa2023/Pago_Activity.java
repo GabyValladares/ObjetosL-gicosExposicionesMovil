@@ -1,22 +1,21 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
 
 public class Pago_Activity extends AppCompatActivity {
+
     private TextView txtCancelar;
     private Button btnVolver;
     private double sueldoBasico;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,5 +79,4 @@ public class Pago_Activity extends AppCompatActivity {
 
         return (multas.equalsIgnoreCase("si")) ? valorMatriculacion + sueldoBasico * 0.25 : valorMatriculacion;
     }
-
 }

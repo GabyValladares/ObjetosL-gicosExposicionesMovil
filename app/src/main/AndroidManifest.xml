@@ -26,6 +26,14 @@
             android:exported="false" />
         <activity
             android:name=".ToolBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Almeida"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,9 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Almeida"
-            android:exported="false" />
     </application>
 
 </manifest>
