@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">REVISION</string>
+
+    <style name="Tema" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorPrimaryDark">@color/design_default_color_primary_dark</item>
+
+
+    </style>
+
+
+    <style name="REVISIÓN_VEHICULAR">
+        <item name="android:textColorPrimary">#F8F5F5</item>
+
+        <item name="actionMenuTextColor">#2196F3</item>
+    </style>
+
 </resources>

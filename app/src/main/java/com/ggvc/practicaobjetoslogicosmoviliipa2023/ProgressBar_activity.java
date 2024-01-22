@@ -1,32 +1,47 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
+import android.os.Bundle;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 
-public class MainActivity extends AppCompatActivity {
-    private Toolbar toolbar1;
+
+public class ProgressBar_activity extends AppCompatActivity {
+
 
     //progeressbar
     private ProgressBar progressBar;
     private Button startButton;
     private int progressStatus = 0;
     private Handler handler = new Handler();
+
+
+
+
+
+    public ProgressBar_activity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar1=findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
+        setContentView(R.layout.activity_progress_bar);
         progressBar = findViewById(R.id.progressBar);
         startButton = findViewById(R.id.startButton);
+
+
+
+
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,10 +75,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.menu,menu);
-        return true;
-    }
 }

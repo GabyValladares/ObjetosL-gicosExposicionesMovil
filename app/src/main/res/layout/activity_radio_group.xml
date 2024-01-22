@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RadioGroup_activity">
+    tools:context=".RadioGroup_Activity">
+
 
     <RadioGroup
-        android:id="@+id/RDT"
-        android:layout_width="192dp"
-        android:layout_height="193dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:id="@+id/radioGroupOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="111dp"
-        android:layout_marginBottom="360dp">
+        android:layout_marginEnd="237dp"
+        android:layout_marginBottom="484dp">
+
+        <RadioButton
+            android:id="@+id/radioButtonSuma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suma" />
+
+        <RadioButton
+            android:id="@+id/radioButtonResta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resta" />
 
     </RadioGroup>
+
 
     <TextView
         android:id="@+id/textView"
@@ -28,8 +38,8 @@
         android:layout_height="37dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="111dp"
-        android:layout_marginBottom="634dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="610dp"
         android:text="SELECCIONE UNA OPCIÓN " />
 
     <Button
@@ -38,37 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="245dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="337dp"
         android:text="Button" />
-
-    <RadioButton
-        android:id="@+id/radioButtonClaro"
-        android:layout_width="108dp"
-        android:layout_height="61dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="465dp"
-        android:text="Claro" />
-
-    <RadioButton
-        android:id="@+id/radioButtonOscuro"
-        android:layout_width="107dp"
-        android:layout_height="62dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="384dp"
-        android:text="Oscuro" />
-
 
 </RelativeLayout>
