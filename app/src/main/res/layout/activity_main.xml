@@ -7,12 +7,195 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/lblTitulo"
+        android:layout_width="207dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:text="FICHA VEHICULAR"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrDatosPersonales"
+        android:layout_width="413dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblPersonales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Datos Personales"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Nombre" />
+
+            <EditText
+                android:id="@+id/txtCedula"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Cedula" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnProcesar"
+        android:layout_width="115dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="8dp"
+        android:text="Procesar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrVehiculo"
+        android:layout_width="404dp"
+        android:layout_height="436dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblColor"
+                android:layout_width="310dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="232dp"
+                android:text="Color"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnColor"
+                android:layout_width="92dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="316dp"
+                android:layout_marginTop="232dp"
+                android:text="Color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Datos Vehiculares"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtPlaca"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Placa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblVehiculo" />
+
+            <EditText
+                android:id="@+id/txtCosto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="352dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Costo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblVehiculo" />
+
+            <ToggleButton
+                android:id="@+id/tbtnMultas"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="296dp"
+                android:layout_marginTop="428dp"
+                android:checked="false"
+                android:text="ToggleButton"
+                android:textOff="No"
+                android:textOn="Si"
+                app:layout_constraintStart_toStartOf="@+id/lblMultas"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblMultas"
+                android:layout_width="310dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="432dp"
+                android:text="¿Posee Multas?"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblFechaFabri"
+                android:layout_width="310dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="100dp"
+                android:text="Fecha de Fabricación"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnCalendar"
+                android:layout_width="97dp"
+                android:layout_height="61dp"
+                android:layout_marginStart="312dp"
+                android:layout_marginTop="100dp"
+                android:text="Fecha"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/sprMarca"
+                android:layout_width="400dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="168dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/sprTipo"
+                android:layout_width="400dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="288dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
