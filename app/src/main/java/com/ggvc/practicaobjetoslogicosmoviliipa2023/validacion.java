@@ -1,22 +1,26 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class validacion extends AppCompatActivity {
     EditText txtRenovacion, txtContaminacion, txtMatriculacion, txtMultas, txtTotalMatricula;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validacion);
+
 
         txtRenovacion = findViewById(R.id.txt_renovacion);
         txtContaminacion = findViewById(R.id.txt_contaminacion);
@@ -86,7 +90,34 @@ public class validacion extends AppCompatActivity {
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                // Inflar el layout del diálogo
+                View dialogView = LayoutInflater.from(validacion.this).inflate(R.layout.dialog_rating, null);
+
+                // Configurar el RatingBar
+                RatingBar ratingBar = dialogView.findViewById(R.id.ratingBar);
+
+                // Crear el AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(validacion.this);
+                builder.setView(dialogView);
+                builder.setTitle("Calificar");
+                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Obtener la calificación del RatingBar
+                        float calificacion = ratingBar.getRating();
+                        // Poner la calificación en el Intent para pasarla de vuelta a la actividad anterior
+                        Intent intent = new Intent();
+                        intent.putExtra("calificacion", calificacion);
+                        setResult(RESULT_OK, intent);
+                        // Finalizar la actividad actual y volver a la actividad anterior
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Cancelar", null);
+
+                // Mostrar el AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }

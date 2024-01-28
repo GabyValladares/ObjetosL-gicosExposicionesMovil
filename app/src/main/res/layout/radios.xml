@@ -33,23 +33,16 @@
         android:id="@+id/radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Opción 1"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="212dp" />
+        android:text="Masculino"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="208dp" />
 
     <RadioButton
         android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Opción 2"
+        android:text="Femenino"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="256dp" />
 
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Opción 3"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="309dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

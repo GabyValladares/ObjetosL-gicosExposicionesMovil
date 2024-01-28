@@ -7,12 +7,42 @@
     tools:context=".deber">
 
 
+    <ScrollView
+        android:layout_width="158dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="660dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txt_nombrepropietario"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="text"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txt_numeroCedula"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="text"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary" />
-
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -21,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="826dp"
+        android:layout_marginBottom="766dp"
         android:max="100"
         android:progress="0" />
 
@@ -31,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="346dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="263dp"
         android:text="Tipo de Vehículo" />
 
     <TextView
@@ -41,39 +71,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="291dp"
-        android:layout_marginBottom="229dp"
+        android:layout_marginEnd="222dp"
+        android:layout_marginBottom="148dp"
+        android:lineSpacingExtra="10sp"
         android:text="Valor del Vehículo" />
 
     <TextView
         android:id="@+id/multas"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="272dp"
-        android:layout_marginBottom="161dp"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="97dp"
+        android:lineSpacingExtra="10sp"
         android:text="si posee o no multas" />
-
-    <TextView
-        android:id="@+id/cedula"
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="730dp"
-        android:text="Número de Cédula del Propietario" />
-
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="154dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="233dp"
-        android:layout_marginBottom="658dp"
-        android:text="Nombres del Propietario" />
 
     <TextView
         android:id="@+id/placa"
@@ -81,8 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="591dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="551dp"
         android:text="Número de placa" />
 
     <TextView
@@ -91,8 +103,8 @@
         android:layout_height="45dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="232dp"
-        android:layout_marginBottom="509dp"
+        android:layout_marginEnd="218dp"
+        android:layout_marginBottom="459dp"
         android:text="Año de Fabricación del Vehículo" />
 
     <TextView
@@ -101,9 +113,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="458dp"
+        android:layout_marginEnd="287dp"
+        android:layout_marginBottom="377dp"
         android:text="Marca" />
+
 
     <TextView
         android:id="@+id/color"
@@ -111,8 +124,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="321dp"
-        android:layout_marginBottom="393dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginBottom="309dp"
         android:text="Color" />
 
     <Button
@@ -121,31 +134,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="25dp"
         android:text="Ingresar" />
 
-    <EditText
-        android:id="@+id/txt_numeroCedula"
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="725dp"
-        android:ems="10"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/txt_nombrepropietario"
-        android:layout_width="162dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="649dp"
-        android:ems="10"
-        android:inputType="text" />
 
     <EditText
         android:id="@+id/txt_numeroPlaca"
@@ -153,8 +146,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="587dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="539dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -164,14 +157,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="514dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="459dp"
         android:ems="10"
         android:inputType="text" />
-
-
-
-
 
     <RadioGroup
         android:id="@+id/radioGroupMarca"
@@ -179,8 +168,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="444dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="366dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -195,9 +184,7 @@
             android:layout_height="wrap_content"
             android:text="Suzuki" />
 
-        <!-- Agrega más RadioButtons según las marcas que necesitas -->
     </RadioGroup>
-
 
     <EditText
         android:id="@+id/txt_color"
@@ -205,74 +192,101 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="382dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="308dp"
         android:ems="10"
         android:inputType="text" />
-
 
     <RadioGroup
         android:id="@+id/radioGroupTipoVehiculo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="69dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="293dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="179dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioJeep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
             android:text="Jeep" />
 
         <RadioButton
             android:id="@+id/radioCamioneta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
             android:text="Camioneta" />
 
         <RadioButton
             android:id="@+id/radioVitara"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
             android:text="Vitara" />
 
         <RadioButton
             android:id="@+id/radioAutomovil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:lineSpacingExtra="10sp"
             android:text="Automóvil" />
 
     </RadioGroup>
 
-
-
-
-
-
-
-    <EditText
-        android:id="@+id/txt_multas"
-        android:layout_width="162dp"
+    <ToggleButton
+        android:id="@+id/toggleMultas"
+        android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="153dp"
-        android:ems="10"
-        android:inputType="text" />
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="86dp"
+        android:lineSpacingExtra="48sp"
+        android:textOff="No"
+        android:textOn="Sí" />
 
     <EditText
         android:id="@+id/txt_valorvehiculo"
-        android:layout_width="162dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="228dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="139dp"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:lineSpacingExtra="10sp" />
+
+    <ScrollView
+        android:layout_width="162dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="672dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:lineSpacingExtra="20sp"
+                android:text="Nombre del propietario" />
+
+            <TextView
+                android:id="@+id/cedula"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:text="Cedula Propietario" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

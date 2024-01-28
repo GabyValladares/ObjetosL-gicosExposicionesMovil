@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -23,10 +24,9 @@ public class deber extends AppCompatActivity {
 
     ProgressBar progressBar;
     Button button;
-    EditText txt_numeroCedula, txt_nombrepropietario, txt_numeroPlaca, txt_anioFabricacion, txt_color,  txt_valorVehiculo, txt_multas;
-    RadioGroup radioGroupMarca;
-
-    RadioGroup radioGroupTipoVehiculo;
+    EditText txt_numeroCedula, txt_nombrepropietario, txt_numeroPlaca, txt_anioFabricacion, txt_color, txt_valorVehiculo;
+    ToggleButton toggleMultas;
+    RadioGroup radioGroupMarca, radioGroupTipoVehiculo;
 
     TextView tipoVehiculo, valorVehiculo, multas, cedula, nombre, placa, aniodefabr, marca, color;
 
@@ -45,12 +45,12 @@ public class deber extends AppCompatActivity {
         txt_numeroPlaca = findViewById(R.id.txt_numeroPlaca);
         txt_anioFabricacion = findViewById(R.id.txt_anioFrabri);
         txt_color = findViewById(R.id.txt_color);
-        radioGroupTipoVehiculo = findViewById(R.id.radioGroupTipoVehiculo);
         txt_valorVehiculo = findViewById(R.id.txt_valorvehiculo);
-        txt_multas = findViewById(R.id.txt_multas);
+        toggleMultas = findViewById(R.id.toggleMultas);
+        radioGroupTipoVehiculo = findViewById(R.id.radioGroupTipoVehiculo);
         radioGroupMarca = findViewById(R.id.radioGroupMarca);
 
-        // Referencias de TextView
+
         tipoVehiculo = findViewById(R.id.tipo_vehiculo);
         valorVehiculo = findViewById(R.id.valor_vehiculo);
         multas = findViewById(R.id.multas);
@@ -62,6 +62,7 @@ public class deber extends AppCompatActivity {
         color = findViewById(R.id.color);
 
         ocultarCampos();
+        updateButtonState();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,19 +73,16 @@ public class deber extends AppCompatActivity {
                 String anioFabricacion = txt_anioFabricacion.getText().toString();
                 String colorText = txt_color.getText().toString();
                 String valorVehiculoText = txt_valorVehiculo.getText().toString();
-                String multasText = txt_multas.getText().toString();
-
+                String multasText = toggleMultas.isChecked() ? "true" : "false";
 
                 int selectedTipoVehiculoId = radioGroupTipoVehiculo.getCheckedRadioButtonId();
                 RadioButton radioButtonTipoVehiculo = findViewById(selectedTipoVehiculoId);
                 String tipoVehiculoText = radioButtonTipoVehiculo.getText().toString();
 
-
                 int selectedId = radioGroupMarca.getCheckedRadioButtonId();
                 RadioButton radioButtonMarca = findViewById(selectedId);
                 String marcaText = radioButtonMarca.getText().toString();
                 updateProgressBar();
-
 
                 if (!numeroCedula.isEmpty() && !numeroPlaca.isEmpty() && !valorVehiculoText.isEmpty()) {
                     Intent intent = new Intent(deber.this, validacion.class);
@@ -98,18 +96,17 @@ public class deber extends AppCompatActivity {
                     intent.putExtra("marca", marcaText);
                     intent.putExtra("multas", multasText);
                     startActivity(intent);
-                } else {
                 }
             }
         });
 
+        toggleMultas.setOnCheckedChangeListener((buttonView, isChecked) -> updateProgressBar());
         txt_numeroCedula.addTextChangedListener(new CustomTextWatcher());
         txt_nombrepropietario.addTextChangedListener(new CustomTextWatcher());
         txt_numeroPlaca.addTextChangedListener(new CustomTextWatcher());
         txt_anioFabricacion.addTextChangedListener(new CustomTextWatcher());
         txt_color.addTextChangedListener(new CustomTextWatcher());
         txt_valorVehiculo.addTextChangedListener(new CustomTextWatcher());
-        txt_multas.addTextChangedListener(new CustomTextWatcher());
     }
 
     @Override
@@ -143,7 +140,7 @@ public class deber extends AppCompatActivity {
         txt_color.setVisibility(View.GONE);
         radioGroupTipoVehiculo.setVisibility(View.GONE);
         txt_valorVehiculo.setVisibility(View.GONE);
-        txt_multas.setVisibility(View.GONE);
+        toggleMultas.setVisibility(View.GONE);
         radioGroupMarca.setVisibility(View.GONE);
 
         tipoVehiculo.setVisibility(View.GONE);
@@ -168,7 +165,7 @@ public class deber extends AppCompatActivity {
         txt_color.setVisibility(View.GONE);
         radioGroupTipoVehiculo.setVisibility(View.GONE);
         txt_valorVehiculo.setVisibility(View.GONE);
-        txt_multas.setVisibility(View.GONE);
+        toggleMultas.setVisibility(View.GONE);
         radioGroupMarca.setVisibility(View.GONE);
 
         // Muestra los TextView
@@ -192,7 +189,7 @@ public class deber extends AppCompatActivity {
         txt_color.setVisibility(View.VISIBLE);
         radioGroupTipoVehiculo.setVisibility(View.VISIBLE);
         txt_valorVehiculo.setVisibility(View.VISIBLE);
-        txt_multas.setVisibility(View.VISIBLE);
+        toggleMultas.setVisibility(View.VISIBLE);
         radioGroupMarca.setVisibility(View.VISIBLE);
 
         // Oculta los demás EditText
@@ -219,12 +216,13 @@ public class deber extends AppCompatActivity {
 
         // Actualizar el progreso del ProgressBar
         progressBar.setProgress(progress);
+        updateButtonState();  // Actualizar el estado del botón
     }
 
     private int calculateProgress() {
         int filledEditTextCount = 0;
 
-        int totalEditTextCount = 7;
+        int totalEditTextCount = 6;
 
         if (!txt_numeroCedula.getText().toString().isEmpty()) filledEditTextCount++;
         if (!txt_nombrepropietario.getText().toString().isEmpty()) filledEditTextCount++;
@@ -232,10 +230,16 @@ public class deber extends AppCompatActivity {
         if (!txt_anioFabricacion.getText().toString().isEmpty()) filledEditTextCount++;
         if (!txt_color.getText().toString().isEmpty()) filledEditTextCount++;
         if (!txt_valorVehiculo.getText().toString().isEmpty()) filledEditTextCount++;
-        if (!txt_multas.getText().toString().isEmpty()) filledEditTextCount++;
+
 
         // Calcular el progreso
         return (filledEditTextCount * 100) / totalEditTextCount;
+    }
+
+    private void updateButtonState() {
+        // Deshabilitar el botón si no todos los campos están llenos
+        boolean isButtonEnabled = calculateProgress() == 100;
+        button.setEnabled(isButtonEnabled);
     }
 
     private class CustomTextWatcher implements TextWatcher {
@@ -251,7 +255,7 @@ public class deber extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable editable) {
-            // Llamamos a la función para actualizar la barra de progreso
+            // Llamamos a la función para actualizar la barra de progreso y el estado del botón
             updateProgressBar();
         }
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,11 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticaObjetosLogicosMovilIIPA2023"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".floRating"
+            android:exported="false" />
+        <activity
+            android:name=".calendario_mil"
+            android:exported="false" />
+        <activity
+            android:name=".searBrucil"
+            android:exported="false" />
+        <activity
+            android:name=".alchebox"
+            android:exported="false" />
+        <activity
+            android:name=".view"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".validacion"
             android:exported="false" />
@@ -28,22 +42,15 @@
         <activity
             android:name=".Progressbar"
             android:exported="false" />
-
-
-
         <activity
             android:name=".deber"
-            android:exported="true" >
-
-
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

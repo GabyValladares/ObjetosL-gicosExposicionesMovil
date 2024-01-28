@@ -14,7 +14,7 @@ public class RadiosActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton1;
     private RadioButton radioButton2;
-    private RadioButton radioButton3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class RadiosActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         radioButton1 = findViewById(R.id.radioButton);
         radioButton2 = findViewById(R.id.radioButton2);
-        radioButton3 = findViewById(R.id.radioButton3);
+
 
         // Configurar el evento clic del botón
         Button btnMostrar = findViewById(R.id.btnMostrar);
@@ -37,6 +37,7 @@ public class RadiosActivity extends AppCompatActivity {
             }
         });
     }
+
     private void showSelection() {
         // Obtener el ID de la opción seleccionada
         int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -44,11 +45,11 @@ public class RadiosActivity extends AppCompatActivity {
         // Verificar la opción seleccionada y mostrar un mensaje
         String message;
         if (selectedId == radioButton1.getId()) {
-            message = "HAZ ELEGIDO LA OPCION 1";
+            message = "HAZ ELEGIDO LA MASCULINO";
+
         } else if (selectedId == radioButton2.getId()) {
-            message = "HAZ ELEGIDO LA OPCION 2";
-        } else if (selectedId == radioButton3.getId()) {
-            message = "HAZ ELEGIDO LA OPCION 3";
+            message = "HAZ ELEGIDO LA FEMENINA";
+
         } else {
             message = "NINGUNA OPCION SELECCIONADA";
         }
