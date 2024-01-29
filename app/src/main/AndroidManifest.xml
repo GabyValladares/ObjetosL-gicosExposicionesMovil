@@ -12,23 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticaObjetosLogicosMovilIIPA2023"
         tools:targetApi="31">
-
-        <!-- Agrega la actividad FVehicularJY -->
+        <activity
+            android:name=".CalificacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityResultados"
+            android:exported="false" /> <!-- Actividad FVehicularJY -->
         <activity
             android:name=".FVehicularJY"
-            android:exported="true"> <!-- Cambiado a "true" para permitir acceso desde fuera de la aplicación -->
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Elimina o cambia la propiedad "exported" de MainActivity según tus necesidades -->
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

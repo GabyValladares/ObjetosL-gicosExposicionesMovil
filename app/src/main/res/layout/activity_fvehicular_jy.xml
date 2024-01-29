@@ -42,8 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:text="Name" />
+                android:hint="Cédula"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/txtNombre"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name" />
+                android:hint="Nombre" />
 
             <EditText
                 android:id="@+id/txtAnioVe"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name" />
+                android:hint="Año Fab. Vehículo" />
 
             <EditText
                 android:id="@+id/txtPlaca"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name" />
+                android:hint="Num de Placa" />
 
             <EditText
                 android:id="@+id/txtColor"
@@ -75,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name" />
+                android:hint="Color" />
+
 
         </LinearLayout>
     </ScrollView>
@@ -84,7 +85,7 @@
         android:id="@+id/lblMultas"
         android:layout_width="109dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="44dp"
         android:text="MULTAS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,14 +145,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <RadioGroup
         android:id="@+id/rgMarca"
         android:layout_width="130dp"
         android:layout_height="72dp"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="268dp"
+        android:layout_marginBottom="248dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -171,14 +172,14 @@
 
     <TextView
         android:id="@+id/lblnombre7"
-        android:layout_width="109dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="248dp"
+        android:layout_width="133dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="240dp"
         android:text="TIPO VEHICULO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        app:layout_constraintVertical_bias="0.716" />
 
     <Switch
         android:id="@+id/bntMultas"
@@ -196,7 +197,7 @@
         android:id="@+id/lblValorVe"
         android:layout_width="127dp"
         android:layout_height="36dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="200dp"
         android:text="Valor del Vehiculo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -216,31 +217,33 @@
         android:id="@+id/txtFecha"
         android:layout_width="114dp"
         android:layout_height="37dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="24dp"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171" />
 
     <Button
         android:id="@+id/btnCalendario"
-        android:layout_width="136dp"
-        android:layout_height="55dp"
+        android:layout_width="142dp"
+        android:layout_height="42dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginBottom="520dp"
         android:text="CALENDARIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/txtValorVe"
         android:layout_width="145dp"
         android:layout_height="54dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="132dp"
         android:ems="10"
+        android:hint="Valor en dolares"
         android:inputType="text"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
