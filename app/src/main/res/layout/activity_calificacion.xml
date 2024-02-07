@@ -8,15 +8,15 @@
 
     <TextView
         android:id="@+id/lblNombre2"
-        android:layout_width="116dp"
-        android:layout_height="29dp"
-        android:text="NOMBRE"
+        android:layout_width="155dp"
+        android:layout_height="39dp"
+        android:text="HOLA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.386"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.147" />
 
     <TextView
         android:id="@+id/lblTitRatting"
@@ -46,8 +46,8 @@
 
     <RatingBar
         android:id="@+id/ratingBar"
-        android:layout_width="333dp"
-        android:layout_height="55dp"
+        android:layout_width="249dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

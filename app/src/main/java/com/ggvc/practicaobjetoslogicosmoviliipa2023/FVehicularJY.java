@@ -18,8 +18,14 @@ import java.util.Calendar;
 
 public class FVehicularJY extends AppCompatActivity {
 
-    EditText edNombre, edCedulas;
+    EditText edNombres, edCedulas;
     Button btnProcesar, btnCalendario;
+
+    private EditText edCedula;
+    private EditText edNombre;
+
+    private Button btnEnviarDatos;
+
     DatePicker datePicker;
     TextView edFecha; // Cambiado de EditText a TextView
 
@@ -28,7 +34,7 @@ public class FVehicularJY extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fvehicular_jy);
 
-        edNombre = findViewById(R.id.txtNombre);
+        edNombres = findViewById(R.id.txtNombre);
         edCedulas = findViewById(R.id.txtCedula);
         btnProcesar = findViewById(R.id.btnGuardar);
         btnCalendario = findViewById(R.id.btnCalendario);
@@ -70,7 +76,7 @@ public class FVehicularJY extends AppCompatActivity {
     }
 
     public void procesar(View view) {
-        String nombre = edNombre.getText().toString();
+        String nombre = edNombres.getText().toString();
         String cedula = edCedulas.getText().toString();
         String fecha = edFecha.getText().toString();
         boolean tieneMultas = ((Switch) findViewById(R.id.bntMultas)).isChecked();
@@ -83,13 +89,23 @@ public class FVehicularJY extends AppCompatActivity {
 
             // Puedes utilizar la variable tieneMultas en tu lógica según sea necesario
 
+            // Crea un Intent para la nueva actividad
             Intent intent = new Intent(FVehicularJY.this, ActivityResultados.class);
+
+            // Agrega los datos como extras al Intent
+            intent.putExtra("NOMBRE", nombre);
+            intent.putExtra("CEDULA", cedula);
+            intent.putExtra("FECHA", fecha);
+            intent.putExtra("TIENE_MULTAS", tieneMultas);
+
+            // Inicia la nueva actividad con el Intent
             startActivity(intent);
         } else {
             // Mostrar un mensaje de error si el nombre está vacío o la cédula no es numérica
             Toast.makeText(FVehicularJY.this, "Por favor, ingrese datos válidos", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     // Función auxiliar para verificar si una cadena es numérica
     private boolean isNumeric(String str) {

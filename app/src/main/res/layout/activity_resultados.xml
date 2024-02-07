@@ -22,39 +22,27 @@
 
     <TextView
         android:id="@+id/lblCedula"
-        android:layout_width="97dp"
-        android:layout_height="31dp"
+        android:layout_width="151dp"
+        android:layout_height="36dp"
         android:text="CEDULA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.097" />
 
     <TextView
-        android:id="@+id/lblFrase1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/lblNombre"
+        android:layout_width="163dp"
+        android:layout_height="33dp"
         android:text="SR/SRA:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
-    <TextView
-        android:id="@+id/lblNombre"
-        android:layout_width="116dp"
-        android:layout_height="29dp"
-        android:text="NOMBRE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintVertical_bias="0.097" />
 
     <TextView
         android:id="@+id/lblTitMultas"
@@ -98,9 +86,10 @@
         android:text="TOTAL A PAGAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/lblMRenovPlaca"
@@ -174,10 +163,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintHorizontal_bias="0.597"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <TextView
         android:id="@+id/lblTitMultaValorMatriculacion"
@@ -204,10 +193,30 @@
     <Button
         android:id="@+id/btnPuntuacion"
         android:layout_width="138dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="89dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="Puntuar APP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lbltit"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="180dp"
+        android:text="con"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="172dp"
+        android:layout_height="82dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="24dp"
+        android:text="CALCULAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
