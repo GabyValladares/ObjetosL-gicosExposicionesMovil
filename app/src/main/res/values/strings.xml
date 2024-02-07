@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">PracticaObjetosLogicosMovilIIPA2023</string>
+    <string name="txtNombres">Nombres Completos</string>
+    <string name="txtCedula">Cédula</string>
+    <string name="lblFecha">14-02-2023</string>
+    <string name="lblMarca">Toyota</string>
+    <string-array name="Color">
+        <item>Seleccione</item>
+        <item>Azul</item>
+        <item>Negro</item>
+        <item>Rojo</item>
+        <item>Beige</item>
+        <item>Blanco</item>
+        <item>Plomo</item>
+        <item>Café</item>
+        <item>Naranja</item>
+        <item>Verde</item>
+    </string-array>
+    <string-array name="Tipo">
+        <item>Seleccione</item>
+        <item>Jeep</item>
+        <item>Camioneta</item>
+        <item>Automóvil</item>
+        <item>Vitara</item>
+    </string-array>
 </resources>

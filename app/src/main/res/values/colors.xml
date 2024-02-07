@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Colores para el tema claro -->
+    <color name="lightColorPrimary">#3F51B5</color>
+    <color name="lightColorPrimaryDark">#303F9F</color>
+    <color name="lightColorAccent">#FF4081</color>
+
+    <!-- Colores para el tema oscuro -->
+    <color name="darkColorPrimary">#607D8B</color>
+    <color name="darkColorPrimaryDark">#455A64</color>
+    <color name="darkColorAccent">#FFA07A</color>
+
 </resources>
