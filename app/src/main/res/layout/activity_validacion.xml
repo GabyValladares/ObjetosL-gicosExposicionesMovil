@@ -30,7 +30,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/pm"
         android:layout_width="153dp"
         android:layout_height="59dp"
         android:layout_alignParentEnd="true"
@@ -40,7 +40,7 @@
         android:text=" pagar por matriculación el vehículo" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/cedulaa"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -70,7 +70,7 @@
         android:text="Pago de multas" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/matri"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -80,7 +80,7 @@
         android:text="matriculacion" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/conta"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -90,7 +90,7 @@
         android:text="Pago por Contaminacion" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/pago"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -177,7 +177,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="160dp"
+        android:layout_marginEnd="228dp"
         android:layout_marginBottom="56dp"
         android:text="Regresar" />
 
@@ -192,6 +192,16 @@
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="54dp"
+        android:text="Button" />
 
 
 </RelativeLayout>
