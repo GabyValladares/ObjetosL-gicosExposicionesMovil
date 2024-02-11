@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,8 @@ public class FVehicularJY extends AppCompatActivity {
     DatePicker datePicker;
     TextView edFecha; // Cambiado de EditText a TextView
 
+    RadioGroup rgMarca, rgTipo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +44,11 @@ public class FVehicularJY extends AppCompatActivity {
         edAnio = findViewById(R.id.txtAnioVe);
         btnProcesar = findViewById(R.id.btnGuardar);
         btnCalendario = findViewById(R.id.btnCalendario);
-       // datePicker = findViewById(R.id.datePicker);
         edFecha = findViewById(R.id.txtFecha); // Actualizado
+      // RADIO GROUP de marca y tipo vehiculo
+        rgMarca = findViewById(R.id.rgMarca);
+        rgTipo = findViewById(R.id.rgTipo);
+
 
         btnProcesar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +92,13 @@ public class FVehicularJY extends AppCompatActivity {
         String anio = edAnio.getText().toString();
         boolean tieneMultas = ((Switch) findViewById(R.id.bntMultas)).isChecked();
 
+        RadioButton radioButtonMarca = findViewById(rgMarca.getCheckedRadioButtonId());
+        String marcaSeleccionada = radioButtonMarca.getText().toString();
+
+        // Obtener la selección de tipo
+        RadioButton radioButtonTipo = findViewById(rgTipo.getCheckedRadioButtonId());
+        String tipoSeleccionado = radioButtonTipo.getText().toString();
+
         if (!nombre.isEmpty() && isNumeric(cedula) && !fecha.isEmpty()) {
             // Campos requeridos están llenos
             // Puedes ajustar el progreso del ProgressBar aquí
@@ -96,14 +110,15 @@ public class FVehicularJY extends AppCompatActivity {
             // Crea un Intent para la nueva actividad
             Intent intent = new Intent(FVehicularJY.this, ActivityResultados.class);
 
-// Agrega los datos como extras al Intent
+            // Agrega los datos como extras al Intent
             intent.putExtra("NOMBRE", nombre);
             intent.putExtra("CEDULA", cedula);
             intent.putExtra("FECHA", fecha);
             intent.putExtra("TIENE_MULTAS", tieneMultas);
             intent.putExtra("PLACA", placa);
             intent.putExtra("ANIO", anio);
-
+            intent.putExtra("MARCA", marcaSeleccionada);
+            intent.putExtra("TIPO", tipoSeleccionado);
 
             startActivity(intent);
 
@@ -112,7 +127,6 @@ public class FVehicularJY extends AppCompatActivity {
             Toast.makeText(FVehicularJY.this, "Por favor, ingrese datos válidos", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     // Función auxiliar para verificar si una cadena es numérica
     private boolean isNumeric(String str) {

@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Cédula"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/txtNombre"
@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
+                android:inputType="number"
                 android:hint="Año Fab. Vehículo" />
 
             <EditText
@@ -185,7 +185,7 @@
         android:id="@+id/bntMultas"
         android:layout_width="103dp"
         android:layout_height="49dp"
-        android:text="SI/NO"
+        android:text="NO/SI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.792"
