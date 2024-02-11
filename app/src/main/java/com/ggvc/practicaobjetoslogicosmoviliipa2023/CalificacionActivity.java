@@ -6,15 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.RatingBar;
+
 
 public class CalificacionActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calificacion);
-
-
 
         // Recuperar el dato de nombre de la Intent
         Intent intent = getIntent();
@@ -26,8 +27,11 @@ public class CalificacionActivity extends AppCompatActivity {
         // Mostrar el dato de nombre en la TextView
         lblNombre2.setText("SR/SRA:" + nombre);
 
+        // Obtener referencia al RatingBar
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
+
         Button btnAtras = findViewById(R.id.btnAtras2);
-        Button btnPuntuar = findViewById(R.id.btnPuntuar);
+        Button btnPuntuar = findViewById(R.id.btnCalificar);
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,9 +43,13 @@ public class CalificacionActivity extends AppCompatActivity {
         btnPuntuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Aquí puedes agregar código para enviar la puntuación
-                // Por ahora, simplemente regresa a la actividad anterior
-                finish();
+                // Obtener la calificación del RatingBar
+                float calificacion = ratingBar.getRating();
+
+                // Mostrar el mensaje con la calificación
+                TextView txtCalificacion = findViewById(R.id.txtCalificacion);
+                String mensaje = nombre + " ha calificado con " + calificacion;
+                txtCalificacion.setText(mensaje);
             }
         });
     }

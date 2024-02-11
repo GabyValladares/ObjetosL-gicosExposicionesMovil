@@ -18,7 +18,7 @@ import java.util.Calendar;
 
 public class FVehicularJY extends AppCompatActivity {
 
-    EditText edNombres, edCedulas;
+    EditText edNombres, edCedulas, edPlaca, edAnio;
     Button btnProcesar, btnCalendario;
 
     private EditText edCedula;
@@ -36,6 +36,8 @@ public class FVehicularJY extends AppCompatActivity {
 
         edNombres = findViewById(R.id.txtNombre);
         edCedulas = findViewById(R.id.txtCedula);
+        edPlaca = findViewById(R.id.txtPlaca);
+        edAnio = findViewById(R.id.txtAnioVe);
         btnProcesar = findViewById(R.id.btnGuardar);
         btnCalendario = findViewById(R.id.btnCalendario);
        // datePicker = findViewById(R.id.datePicker);
@@ -79,6 +81,8 @@ public class FVehicularJY extends AppCompatActivity {
         String nombre = edNombres.getText().toString();
         String cedula = edCedulas.getText().toString();
         String fecha = edFecha.getText().toString();
+        String placa = edPlaca.getText().toString();
+        String anio = edAnio.getText().toString();
         boolean tieneMultas = ((Switch) findViewById(R.id.bntMultas)).isChecked();
 
         if (!nombre.isEmpty() && isNumeric(cedula) && !fecha.isEmpty()) {
@@ -92,14 +96,17 @@ public class FVehicularJY extends AppCompatActivity {
             // Crea un Intent para la nueva actividad
             Intent intent = new Intent(FVehicularJY.this, ActivityResultados.class);
 
-            // Agrega los datos como extras al Intent
+// Agrega los datos como extras al Intent
             intent.putExtra("NOMBRE", nombre);
             intent.putExtra("CEDULA", cedula);
             intent.putExtra("FECHA", fecha);
             intent.putExtra("TIENE_MULTAS", tieneMultas);
+            intent.putExtra("PLACA", placa);
+            intent.putExtra("ANIO", anio);
 
-            // Inicia la nueva actividad con el Intent
+
             startActivity(intent);
+
         } else {
             // Mostrar un mensaje de error si el nombre está vacío o la cédula no es numérica
             Toast.makeText(FVehicularJY.this, "Por favor, ingrese datos válidos", Toast.LENGTH_SHORT).show();

@@ -18,14 +18,32 @@ public class ActivityResultados extends AppCompatActivity {
         Intent intent = getIntent();
         String nombre = intent.getStringExtra("NOMBRE");
         String cedula = intent.getStringExtra("CEDULA");
+        String placa = intent.getStringExtra("PLACA");
+        String anio = intent.getStringExtra("ANIO"); // Obtener el año
+        boolean tieneMultas = intent.getBooleanExtra("TIENE_MULTAS", false);
 
-        // Obtener referencias a las TextViews
+
+// Obtener referencias a las TextViews
         TextView lblNombre = findViewById(R.id.lblNombre);
         TextView lblCedula = findViewById(R.id.lblCedula);
+        TextView lblPlaca = findViewById(R.id.lblPlaca);
+        TextView lblAnio = findViewById(R.id.lblContaminacion); // Referencia a la TextView del año
+        TextView lblMultas = findViewById(R.id.lblMxM);
 
-        // Mostrar los datos en las TextViews
+
+// Mostrar los datos en las TextViews
         lblNombre.setText("NOMBRE: " + nombre);
         lblCedula.setText("CEDULA: " + cedula);
+        lblPlaca.setText("PLACA: " + placa);
+        lblAnio.setText("AÑO: " + anio); // Mostrar el año en la TextView correspondiente
+
+        if (tieneMultas) {
+            lblMultas.setText("SI");
+        } else {
+            lblMultas.setText("NO");
+        }
+
+
 
 
         Button btnAtras = findViewById(R.id.btnAtras);
