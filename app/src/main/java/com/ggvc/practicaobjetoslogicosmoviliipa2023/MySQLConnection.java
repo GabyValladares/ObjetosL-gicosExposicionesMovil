@@ -1,48 +1,42 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class MySQLConnection {
-    private static final String URL = "jdbc:mysql://localhost/auto";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
-
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("MySQL JDBC Driver no encontrado", e);
-        }
+public class MySQLConnection extends SQLiteOpenHelper {
+    public MySQLConnection(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
-    public static void insertData(Context context, String nombre, String cedula, String pagarMatricula, String pagarMultas, String matriculacion, String pagoContaminacion, String total) {
-        try (Connection connection = getConnection()) {
-            if (connection != null) {
-                String query = "INSERT INTO datos (nombre, cedula, pagarMatricula, PagoMultas, matriculacion, pagoCont, total) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-                    preparedStatement.setString(1, nombre);
-                    preparedStatement.setString(2, cedula);
-                    preparedStatement.setString(3, pagarMatricula);
-                    preparedStatement.setString(4, pagarMultas);
-                    preparedStatement.setString(5, matriculacion);
-                    preparedStatement.setString(6, pagoContaminacion);
-                    preparedStatement.setString(7, total);
-                    preparedStatement.executeUpdate();
-                    Toast.makeText(context, "Datos guardados exitosamente", Toast.LENGTH_SHORT).show();
-                }
-            } else {
-                Toast.makeText(context, "Error al conectar a la base de datos", Toast.LENGTH_SHORT).show();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            Toast.makeText(context, "Error al guardar los datos", Toast.LENGTH_SHORT).show();
-        }
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL("CREATE TABLE tblvehiculo"+"(" +
+                "vehiculo_id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "nombre text NOT NULL,"+
+                "cedula text NOT NULL," +
+
+                "pagarMatricula text NOT NULL,"+
+                "PagoMultas text NOT NULL,"+
+                "matriculacion text NOT NULL,"+
+                "pagoCont text NOT NULL,"+
+                "total text NOT NULL)");
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        //CAMBIE LA VERSIÓN DE LA TABLA DE LA BDD
+        db.execSQL("DROP TABLE tblvehiculo");
+        onCreate(db);
     }
 }

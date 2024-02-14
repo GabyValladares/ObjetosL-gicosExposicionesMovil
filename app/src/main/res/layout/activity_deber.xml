@@ -8,12 +8,12 @@
 
 
     <ScrollView
-        android:layout_width="158dp"
-        android:layout_height="75dp"
+        android:layout_width="171dp"
+        android:layout_height="101dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="660dp">
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="550dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="766dp"
+        android:layout_marginBottom="651dp"
         android:max="100"
         android:progress="0" />
 
@@ -71,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="222dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="139dp"
         android:lineSpacingExtra="10sp"
         android:text="Valor del Vehículo" />
 
@@ -82,10 +82,11 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="211dp"
-        android:layout_marginBottom="97dp"
+        android:layout_marginEnd="246dp"
+        android:layout_marginBottom="76dp"
         android:lineSpacingExtra="10sp"
         android:text="si posee o no multas" />
+
 
     <TextView
         android:id="@+id/placa"
@@ -93,8 +94,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="250dp"
-        android:layout_marginBottom="551dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="513dp"
         android:text="Número de placa" />
 
     <TextView
@@ -103,8 +104,8 @@
         android:layout_height="45dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="218dp"
-        android:layout_marginBottom="459dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginBottom="431dp"
         android:text="Año de Fabricación del Vehículo" />
 
     <TextView
@@ -113,10 +114,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="287dp"
+        android:layout_marginEnd="311dp"
         android:layout_marginBottom="377dp"
         android:text="Marca" />
-
 
     <TextView
         android:id="@+id/color"
@@ -124,8 +124,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="289dp"
-        android:layout_marginBottom="309dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="311dp"
         android:text="Color" />
 
     <Button
@@ -134,11 +134,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="164dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="171dp"
+        android:layout_marginBottom="18dp"
         android:text="Ingresar" />
-
-
 
     <EditText
         android:id="@+id/txt_numeroPlaca"
@@ -146,8 +144,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="539dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="505dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -157,8 +155,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="459dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="437dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -192,8 +190,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="308dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="297dp"
         android:ems="10"
         android:inputType="text" />
 
@@ -243,8 +241,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="113dp"
-        android:layout_marginBottom="86dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="75dp"
         android:lineSpacingExtra="48sp"
         android:textOff="No"
         android:textOn="Sí" />
@@ -255,19 +253,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="139dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="126dp"
         android:ems="10"
         android:inputType="text"
         android:lineSpacingExtra="10sp" />
 
     <ScrollView
-        android:layout_width="162dp"
-        android:layout_height="50dp"
+        android:layout_width="169dp"
+        android:layout_height="74dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="212dp"
-        android:layout_marginBottom="672dp">
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="569dp">
 
         <LinearLayout
             android:layout_width="match_parent"

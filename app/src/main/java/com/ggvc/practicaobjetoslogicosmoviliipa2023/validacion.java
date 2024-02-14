@@ -1,8 +1,12 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
-import android.content.Context;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +15,10 @@ import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -25,7 +31,8 @@ import okhttp3.Response;
 
 public class validacion extends AppCompatActivity {
     EditText txtRenovacion, txtContaminacion, txtMatriculacion, txtMultas, txt_toalmatricula, txtNombre, txtCedula;
-
+     private static final String CHANNEL_ID="canal";
+     Button btn_noti;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +45,7 @@ public class validacion extends AppCompatActivity {
         txt_toalmatricula = findViewById(R.id.txt_toalmatricula);
         txtNombre = findViewById(R.id.txt_nombreCliente);
         txtCedula = findViewById(R.id.txt_cedula33);
-
+        btn_noti = findViewById(R.id.btn_noti);
 
         Intent intent = getIntent();
         String numeroCedula = Objects.requireNonNull(intent.getStringExtra("numeroCedula"));
@@ -124,14 +131,14 @@ public class validacion extends AppCompatActivity {
                 // Obtener los valores de los EditText
                 String nombre = txtNombre.getText().toString();
                 String cedula = txtCedula.getText().toString();
-                String pagarMatricula = txtMatriculacion.getText().toString(); // Asegúrate de obtener el valor correcto de renovación
+                String pagarMatricula = txtMatriculacion.getText().toString();
                 String pagarMultas = txtMultas.getText().toString();
                 String matriculacion = txtRenovacion.getText().toString();
                 String pagoContaminacion = txtContaminacion.getText().toString();
-                String total = txt_toalmatricula.getText().toString(); // Usar el nombre correcto del EditText
+                String total = txt_toalmatricula.getText().toString();
 
 
-                String url = "http://192.168.101.8/movil/webapi.php?op=ingresarD" +
+                String url = "http://10.10.18.90/movil/webapi.php?op=ingresarD" +
                         "&nom=" + nombre +
                         "&ced=" + cedula +
                         "&pm=" + pagarMatricula +
@@ -181,8 +188,93 @@ public class validacion extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
             }
         });
 
+
+        btn_noti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+             generarNoticacionCanal();
+                }else{
+                    generarNoticacionSinCanal();
+                }
+
+            }
+        });
+
+
+
     }
+    public void crearTablaVehiculo(View view) {
+
+        MySQLConnection admin = new MySQLConnection(this, "FichaVehicular.db", null, 1);
+        SQLiteDatabase bd = admin.getWritableDatabase();
+
+        String nombre = txtNombre.getText().toString();
+        String cedula = txtCedula.getText().toString();
+        String pagarMatricula = txtMatriculacion.getText().toString();
+        String pagarMultas = txtMultas.getText().toString();
+        String matriculacion = txtRenovacion.getText().toString();
+        String pagoContaminacion = txtContaminacion.getText().toString();
+        String total = txt_toalmatricula.getText().toString();
+
+
+        if (!nombre.isEmpty() && !cedula.isEmpty() && !pagarMatricula.isEmpty() && !pagarMultas.isEmpty() && !matriculacion.isEmpty() && !pagoContaminacion.isEmpty() && !total.isEmpty()) {
+            ;
+
+            ContentValues datosRegistrar = new ContentValues();
+            datosRegistrar.put("nombre", nombre);
+            datosRegistrar.put("cedula", cedula);
+            datosRegistrar.put("pagarMatricula", pagarMatricula);
+            datosRegistrar.put("PagoMultas", pagarMultas);
+            datosRegistrar.put("matriculacion", matriculacion);
+            datosRegistrar.put("pagoCont", pagoContaminacion);
+            datosRegistrar.put("total", total);
+
+
+
+
+
+
+            bd.insert("tblvehiculo", null, datosRegistrar);
+            Toast.makeText(this, "Datos enviados correctamente", Toast.LENGTH_SHORT).show();
+        } else {
+
+            Toast.makeText(this, "INGRESE LA FORMACIÓN DE MANERA CORRECTA", Toast.LENGTH_LONG).show();
+
+
+        }
+    }
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void generarNoticacionCanal(){
+        NotificationChannel channel=new NotificationChannel(CHANNEL_ID,"NEW", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.createNotificationChannel(channel);
+        generarNoticacionSinCanal();
+    }
+
+
+    public void generarNoticacionSinCanal(){
+
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(getApplicationContext(),CHANNEL_ID)
+                .setSmallIcon(R.drawable.descarga)
+                .setContentTitle("Ficha Vehicular")
+                .setContentText("Notificacion Basica")
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Ficha Vehicular"))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+
+
+}
+
 }

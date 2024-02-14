@@ -4,9 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="crearTablaVehiculo"
     tools:context=".validacion">
 
 
+    <Button
+        android:id="@+id/btn_regresar2"
+        android:layout_width="85dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="43dp"
+        android:onClick="crearTablaVehiculo"
+        android:text="Guardar2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,7 +26,6 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
-
 
 
     <TextView
@@ -35,8 +45,8 @@
         android:layout_height="59dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="476dp"
+        android:layout_marginEnd="246dp"
+        android:layout_marginBottom="446dp"
         android:text=" pagar por matriculación el vehículo" />
 
     <TextView
@@ -46,7 +56,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="287dp"
-        android:layout_marginBottom="605dp"
+        android:layout_marginBottom="546dp"
         android:text="Cedula" />
 
     <TextView
@@ -55,8 +65,8 @@
         android:layout_height="29dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="288dp"
-        android:layout_marginBottom="676dp"
+        android:layout_marginEnd="297dp"
+        android:layout_marginBottom="604dp"
         android:text="Nombre" />
 
     <TextView
@@ -65,8 +75,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="407dp"
+        android:layout_marginEnd="238dp"
+        android:layout_marginBottom="390dp"
         android:text="Pago de multas" />
 
     <TextView
@@ -76,7 +86,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="243dp"
-        android:layout_marginBottom="329dp"
+        android:layout_marginBottom="309dp"
         android:text="matriculacion" />
 
     <TextView
@@ -86,7 +96,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="241dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginBottom="204dp"
         android:text="Pago por Contaminacion" />
 
     <TextView
@@ -95,8 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="238dp"
-        android:layout_marginBottom="154dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="128dp"
         android:text="Total de Pago" />
 
     <EditText
@@ -105,8 +115,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="157dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="118dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -118,7 +128,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="230dp"
+        android:layout_marginBottom="203dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -130,7 +140,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="317dp"
+        android:layout_marginBottom="300dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -141,8 +151,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="399dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="376dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -153,8 +163,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="486dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="465dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -166,19 +176,19 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="591dp"
+        android:layout_marginBottom="545dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
 
     <Button
         android:id="@+id/btn_regresar"
-        android:layout_width="wrap_content"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="228dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="35dp"
         android:text="Regresar" />
 
     <EditText
@@ -187,21 +197,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="674dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="608dp"
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
 
     <Button
         android:id="@+id/btnGuardar"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="225dp"
+        android:layout_marginBottom="40dp"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btn_noti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="83dp"
-        android:layout_marginBottom="54dp"
-        android:text="Button" />
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="43dp"
+        android:text="Notificar" />
 
 
 </RelativeLayout>
