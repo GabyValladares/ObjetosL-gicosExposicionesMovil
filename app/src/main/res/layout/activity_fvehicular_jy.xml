@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/cuchaoe"
     tools:context=".FVehicularJY">
 
     <TextView
@@ -50,32 +51,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Nombre" />
+                android:hint="Nombre"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/txtAnioVe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number"
-                android:hint="Año Fab. Vehículo" />
+                android:hint="Año Fab. Vehículo"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/txtPlaca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Num de Placa" />
+                android:hint="Num de Placa"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/txtColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Color" />
+                android:hint="Color"
+                android:inputType="text" />
 
 
         </LinearLayout>
@@ -106,8 +107,8 @@
         android:id="@+id/rgTipo"
         android:layout_width="134dp"
         android:layout_height="173dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -145,14 +146,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.543" />
 
     <RadioGroup
         android:id="@+id/rgMarca"
         android:layout_width="130dp"
         android:layout_height="72dp"
         android:layout_marginStart="36dp"
-        android:layout_marginBottom="248dp"
+        android:layout_marginBottom="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -217,7 +218,7 @@
         android:id="@+id/txtFecha"
         android:layout_width="114dp"
         android:layout_height="37dp"
-        android:text="TextView"
+        android:hint="FECHA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
@@ -227,10 +228,10 @@
 
     <Button
         android:id="@+id/btnCalendario"
-        android:layout_width="142dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="520dp"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="512dp"
         android:text="CALENDARIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

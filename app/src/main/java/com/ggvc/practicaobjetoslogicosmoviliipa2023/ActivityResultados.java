@@ -6,10 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.text.InputFilter;
-import android.text.Spanned;
-import android.widget.EditText;
-
 import java.util.Calendar;
 
 public class ActivityResultados extends AppCompatActivity {
@@ -28,9 +24,9 @@ public class ActivityResultados extends AppCompatActivity {
         boolean tieneMultas = intent.getBooleanExtra("TIENE_MULTAS", false);
         String marca = intent.getStringExtra("MARCA");
         String tipo = intent.getStringExtra("TIPO");
+        double valorVehiculo = intent.getDoubleExtra("VALOR_VEHICULO", 0);
 
-
-// Obtener referencias a las TextViews
+        // Obtener referencias a las TextViews
         TextView lblNombre = findViewById(R.id.lblNombre);
         TextView lblCedula = findViewById(R.id.lblCedula);
         TextView lblPlaca = findViewById(R.id.lblPlaca);
@@ -38,19 +34,13 @@ public class ActivityResultados extends AppCompatActivity {
         TextView lblMultas = findViewById(R.id.lblMxM);
         TextView lblMarcaTipo = findViewById(R.id.lblMarcaTipo);
 
-
-// Mostrar los datos en las TextViews
+        // Mostrar los datos en las TextViews
         lblNombre.setText("NOMBRE: " + nombre);
         lblCedula.setText("CEDULA: " + cedula);
         lblPlaca.setText("PLACA: " + placa);
         lblAnio.setText("AÑO: " + anio);
-        if (tieneMultas) {
-            lblMultas.setText("SI");
-        } else {
-            lblMultas.setText("NO");
-        }
+        lblMultas.setText(tieneMultas ? "SI" : "NO");
         lblMarcaTipo.setText("Marca y Tipo: " + marca + " - " + tipo);
-
 
         Button btnAtras = findViewById(R.id.btnAtras);
         Button btnPuntuacion = findViewById(R.id.btnPuntuacion);
@@ -62,15 +52,11 @@ public class ActivityResultados extends AppCompatActivity {
                 finish(); // Cierra la actividad actual y regresa a la actividad anterior
             }
         });
+
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener el número de cédula, la placa y el año de fabricación
-                String cedula = getIntent().getStringExtra("CEDULA");
-                String placa = getIntent().getStringExtra("PLACA");
-                String anio = getIntent().getStringExtra("ANIO");
-
-                // Convertir el año de fabricación a entero
+                // Obtener el año de fabricación
                 int anioFabricacion = Integer.parseInt(anio);
 
                 // Obtener el año actual
@@ -79,36 +65,38 @@ public class ActivityResultados extends AppCompatActivity {
 
                 // Calcular la multa por contaminación
                 double multaContaminacion = 0;
-
-                // Verificar si el año de fabricación es menor a 2010
                 if (anioFabricacion < 2010) {
-                    // Calcular la cantidad de años de contaminación
                     int aniosContaminacion = anioActual - anioFabricacion;
-
-                    // Calcular la multa por contaminación (2% por cada año de contaminación)
                     multaContaminacion = 0.02 * aniosContaminacion; // 2% por cada año
                 }
 
-                // Mostrar el resultado de la multa por contaminación en la TextView correspondiente
+                // Mostrar el resultado de la multa por contaminación
                 TextView lblMContam = findViewById(R.id.lblMContam);
-                lblMContam.setText(String.format("%.2f", multaContaminacion)); // Mostrar el resultado con dos decimales
+                lblMContam.setText(String.format("%.2f", multaContaminacion));
 
-                // Verificar la condición y calcular el resultado
-                double resultado = 0;
-                if (cedula.startsWith("1") && placa.contains("I")) {
-                    // Si la cédula comienza con 1 y la placa contiene la letra I
-                    resultado = 0.05 * 435; // 5% del sueldo básico ($435)
-                }
+                // Calcular el valor de matriculación
+                double valorMatriculacion = calcularValorMatriculacion(marca, tipo, valorVehiculo);
 
-                // Mostrar el resultado en la TextView correspondiente
-                TextView lblMRenovPlaca = findViewById(R.id.lblMRenovPlaca);
-                lblMRenovPlaca.setText(String.format("%.2f", resultado)); // Mostrar el resultado con dos decimales
+                // Mostrar el resultado de la matriculación
+                TextView lblValorMatric = findViewById(R.id.lblValorMatric);
+                lblValorMatric.setText(String.format("%.2f", valorMatriculacion));
+
+                // Calcular la multa por multas pendientes
+                double multaPorMultas = tieneMultas ? 0.25 * 435 : 0;
+
+                // Mostrar el resultado de la multa por multas pendientes
+                TextView lblMxMultas = findViewById(R.id.lblMxMultas);
+                lblMxMultas.setText(String.format("%.2f", multaPorMultas));
+
+                // Calcular el total a pagar
+                double totalPagar = valorMatriculacion + multaContaminacion + multaPorMultas;
+
+                // Mostrar el resultado total a pagar
+                TextView lblValorMatric2 = findViewById(R.id.lblValorMatric2);
+                lblValorMatric2.setText(String.format("%.2f", totalPagar));
             }
         });
 
-
-
-// EL BOTON PARA LA SIGUIENTE ACTIVIDAD UWU
         btnPuntuacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +110,24 @@ public class ActivityResultados extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    private double calcularValorMatriculacion(String marca, String tipo, double valorVehiculo) {
+        double valorMatriculacion = 0;
+        if (marca.equals("Toyota")) {
+            if (tipo.equals("Jeep")) {
+                valorMatriculacion = 0.08;
+            } else if (tipo.equals("Camioneta")) {
+                valorMatriculacion = 0.12;
+            }
+        } else if (marca.equals("Suzuki")) {
+            if (tipo.equals("Vitara")) {
+                valorMatriculacion = 0.10;
+            } else if (tipo.equals("Automóvil")) {
+                valorMatriculacion = 0.09;
+            }
+        }
+        valorMatriculacion *= valorVehiculo;
+        return valorMatriculacion;
     }
 }
