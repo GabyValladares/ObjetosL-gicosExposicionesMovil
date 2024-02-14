@@ -142,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="276dp"
-        android:layout_marginTop="696dp"
+        android:layout_marginTop="684dp"
         android:onClick="irCalificar"
         android:text="Calificar"
         app:layout_constraintStart_toStartOf="parent"
@@ -153,7 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="696dp"
+        android:layout_marginTop="684dp"
         android:onClick="crearTableVehiculo"
         android:text="Insertar BDD"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,9 +174,19 @@
         android:id="@+id/btnNotificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="52dp"
         android:text="Notificación"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="98dp"
+        android:layout_height="40dp"
+        android:text="Regresar"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="57dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID="canal";
 
-    Button btNotificar;
+    Button btNotificar,regresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +63,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
         tvTotal=findViewById(R.id.txtTotal);
         tvMarca=findViewById(R.id.lblMarcaB);
         btNotificar=findViewById(R.id.btnNotificar);
+        regresar=findViewById(R.id.btnRegresar);
 
         tvCedula.setText("Cédula Propietario: "+cedula);
         tvNombre.setText("Nombre Propietario: "+nombre);
@@ -97,6 +98,15 @@ public class ResultadoFVActivity extends AppCompatActivity {
             }
         });
 
+        regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ResultadoFVActivity.this,FichaMatriculacion.class);
+                //finish();
+                startActivity(intent);
+                // System.exit(0);
+            }
+        });
 
     }
 
