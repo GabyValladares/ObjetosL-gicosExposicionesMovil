@@ -1,12 +1,18 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +27,10 @@ public class ResultadoFVActivity extends AppCompatActivity {
     Boolean multas;
     double renovacionPlaca=0;
     String placa;
+
+    private static final String CHANNEL_ID="canal";
+
+    Button btNotificar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +62,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
         tvMultas=findViewById(R.id.lblCalculoMultas);
         tvTotal=findViewById(R.id.txtTotal);
         tvMarca=findViewById(R.id.lblMarcaB);
-
+        btNotificar=findViewById(R.id.btnNotificar);
 
         tvCedula.setText("Cédula Propietario: "+cedula);
         tvNombre.setText("Nombre Propietario: "+nombre);
@@ -67,6 +77,27 @@ public class ResultadoFVActivity extends AppCompatActivity {
         tvMultas.setText("Multas Circulación"+multas());
         tvTotal.setText("$"+totalPagar());
         tvAnio.setText("Año Fabricación:"+anio);
+
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+            generarNoticacionCanal();
+        }else{
+            generarNoticacionSinCanal();
+
+        }
+
+        btNotificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
+                    generarNoticacionCanal();
+                }else{
+                    generarNoticacionSinCanal();
+
+                }
+            }
+        });
+
+
     }
 
     public void irCalificar(View view){
@@ -132,6 +163,29 @@ public class ResultadoFVActivity extends AppCompatActivity {
             Toast.makeText(this,"INGRESE LA FORMACIÓN DE MANERA CORRECTA",Toast.LENGTH_LONG).show();
 
         }
+
+
+
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void generarNoticacionCanal(){
+        NotificationChannel channel=new NotificationChannel(CHANNEL_ID,"NEW", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.createNotificationChannel(channel);
+        generarNoticacionSinCanal();
+    }
+    public void generarNoticacionSinCanal(){
+
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(getApplicationContext(),CHANNEL_ID)
+                .setSmallIcon(R.drawable.icono)
+                .setContentTitle("FICHA VEHICULAR GGVC")
+                .setContentText("Notificación Básica Ficha Vehicular")
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Ficha Vehicular"))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
 
 
 

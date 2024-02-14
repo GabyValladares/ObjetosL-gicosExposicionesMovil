@@ -141,8 +141,8 @@
         android:id="@+id/btnIrCalificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="692dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="696dp"
         android:onClick="irCalificar"
         android:text="Calificar"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +152,7 @@
         android:id="@+id/btnInsertar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="696dp"
         android:onClick="crearTableVehiculo"
         android:text="Insertar BDD"
@@ -169,4 +169,14 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="30dp" />
+
+    <Button
+        android:id="@+id/btnNotificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="40dp"
+        android:text="Notificación"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
