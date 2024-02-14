@@ -66,7 +66,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
         tvMultas = findViewById(R.id.lblCalculoMultas);
         tvTotal = findViewById(R.id.txtTotal);
         tvMarca = findViewById(R.id.lblMarcaB);
-        btNotificar = findViewById(R.id.btnNotificar);
+        //btNotificar = findViewById(R.id.btnNotificar);
         regresar = findViewById(R.id.btnRegresar);
 
         tvCedula.setText("Cédula Propietario: " + cedula);
@@ -90,7 +90,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
 
         }
 
-        btNotificar.setOnClickListener(new View.OnClickListener() {
+       /* btNotificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -100,7 +100,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -198,7 +198,7 @@ public class ResultadoFVActivity extends AppCompatActivity {
                 .setSmallIcon(R.drawable.icono)
                 .setContentTitle("FICHA VEHICULAR GGVC")
                 .setContentText("Notificación Básica Ficha Vehicular")
-                .setStyle(new NotificationCompat.BigTextStyle().bigText("Ficha Vehicular"))
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Al terminar el proceso no se olvide de Calificar Nuestro Servicio, su opinión es importante"))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true);
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getApplicationContext());

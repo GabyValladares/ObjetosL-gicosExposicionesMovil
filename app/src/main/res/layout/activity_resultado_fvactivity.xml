@@ -152,12 +152,21 @@
         android:id="@+id/btnInsertar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="684dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="720dp"
         android:onClick="crearTableVehiculo"
         android:text="Insertar BDD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
+        android:text="Regresar"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="720dp" />
 
     <TextView
         android:id="@+id/txtTitulo"
@@ -169,24 +178,5 @@
         android:textStyle="bold"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="30dp" />
-
-    <Button
-        android:id="@+id/btnNotificar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="52dp"
-        android:text="Notificación"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnRegresar"
-        android:layout_width="120dp"
-        android:layout_height="41dp"
-        android:text="Regresar"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="728dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
