@@ -231,7 +231,7 @@
         android:layout_width="156dp"
         android:layout_height="48dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="512dp"
+        android:layout_marginBottom="516dp"
         android:text="CALENDARIO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -245,6 +245,17 @@
         android:ems="10"
         android:hint="Valor en dolares"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/bntNotificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="424dp"
+        android:text="NOTIFICAR"
+        app:icon="@android:drawable/ic_popup_reminder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

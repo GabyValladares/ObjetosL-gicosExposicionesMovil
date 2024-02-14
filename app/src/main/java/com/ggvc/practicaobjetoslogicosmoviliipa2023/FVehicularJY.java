@@ -1,9 +1,15 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
 
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,10 +39,14 @@ public class FVehicularJY extends AppCompatActivity {
 
     RadioGroup rgMarca, rgTipo;
 
+    //private DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fvehicular_jy);
+
+       // dbHelper = new DBHelper(this);
 
         edNombres = findViewById(R.id.txtNombre);
         edCedulas = findViewById(R.id.txtCedula);
@@ -63,6 +73,10 @@ public class FVehicularJY extends AppCompatActivity {
                 showDatePicker();
             }
         });
+
+
+        generarNotificacion();
+
     }
 
     private void showDatePicker() {
@@ -91,6 +105,9 @@ public class FVehicularJY extends AppCompatActivity {
         String placa = edPlaca.getText().toString();
         String anio = edAnio.getText().toString();
         boolean tieneMultas = ((Switch) findViewById(R.id.bntMultas)).isChecked();
+
+       // dbHelper.insertarPropietario(nombre, cedula, fecha);
+       // dbHelper.insertarVehiculo(placa, anio, marcaSeleccionada, tipoSeleccionado);
 
         RadioButton radioButtonMarca = findViewById(rgMarca.getCheckedRadioButtonId());
         String marcaSeleccionada = radioButtonMarca.getText().toString();
@@ -127,6 +144,35 @@ public class FVehicularJY extends AppCompatActivity {
             Toast.makeText(FVehicularJY.this, "Por favor, ingrese datos válidos", Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void generarNotificacion() {
+        String CHANNEL_ID = "com.ggvc.practicaobjetoslogicosmoviliipa2023.channel";
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.notificacion)
+                .setContentTitle("APLICACION FICHA VEHICULAR")
+                .setContentText("Aplicación PAGOS MULTAS VEHICULOS")
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("HOLA ESTA ES MI NOTIFICACION UWU"))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+        // Obtén una instancia del NotificationManager
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        // Crea el canal de notificación para dispositivos con Android Oreo y superior
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Canal de Notificación";
+            String description = "Canal para notificaciones de la aplicación";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Registra el canal en el NotificationManager
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        // Muestra la notificación
+        notificationManager.notify(1, builder.build());
+    }
+
 
     // Función auxiliar para verificar si una cadena es numérica
     private boolean isNumeric(String str) {
