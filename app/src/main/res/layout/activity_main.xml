@@ -17,6 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnProcesar"
+        android:layout_width="115dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="8dp"
+        android:text="Procesar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ScrollView
         android:id="@+id/scrDatosPersonales"
         android:layout_width="413dp"
@@ -56,20 +66,10 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btnProcesar"
-        android:layout_width="115dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginBottom="8dp"
-        android:text="Procesar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ScrollView
         android:id="@+id/scrVehiculo"
         android:layout_width="404dp"
-        android:layout_height="436dp"
+        android:layout_height="352dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="224dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +150,7 @@
                 android:layout_width="310dp"
                 android:layout_height="59dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="432dp"
+                android:layout_marginTop="424dp"
                 android:text="¿Posee Multas?"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,6 +173,7 @@
                 android:layout_height="61dp"
                 android:layout_marginStart="312dp"
                 android:layout_marginTop="100dp"
+                android:onClick="Calendario"
                 android:text="Fecha"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

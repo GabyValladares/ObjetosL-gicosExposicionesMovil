@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PracticaObjetosLogicosMovilIIPA2023</string>
+
+    <string-array name="Marcas">
+        <item>Toyota</item>
+        <item>Suzuki</item>
+    </string-array>
+    <string-array name="Tipo">
+        <item>Camioneta</item>
+        <item>Jeep</item>
+        <item>Vitara</item>
+        <item>automovil</item>
+    </string-array>
+
 </resources>

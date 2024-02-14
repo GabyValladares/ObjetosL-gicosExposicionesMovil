@@ -6,4 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".ResultadoFV">
 
+    <TextView
+        android:id="@+id/lblTitulo2"
+        android:layout_width="172dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="32dp"
+        android:text="Datos Personales"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblTitulo3"
+        android:layout_width="172dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="160dp"
+        android:text="Datos Vehiculares"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblNombre2"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPlaca2"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="212dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblMarca"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="276dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblColor2"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="336dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblMultas2"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="384dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblCosto"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="336dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblTipo"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="276dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblFabricacion"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="212dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblCedula2"
+        android:layout_width="122dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="96dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="436dp"
+        android:onClick="CrearTablaVehiculo"
+        android:text="Registrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNotificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="436dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
