@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PracticaObjetosLogicosMovilIIPA2023"
-        tools:targetApi="34">
+        tools:targetApi="31">
+        <!-- <activity -->
+        <!-- android:name=".Aldas_chekcbox" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".Flores_RaitingBar"
+            android:exported="false" />
+        <activity
+            android:name=".Resultado_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Calendario"
+            android:exported="false" />
+        <activity
+            android:name=".scrollview"
+            android:exported="false" />
+        <activity
+            android:name=".david_pasword"
+            android:exported="false" />
+        <activity
+            android:name=".Yandun"
+            android:exported="false" />
         <activity
             android:name=".SUMA"
             android:exported="false" />
@@ -26,21 +56,13 @@
             android:exported="false" />
         <activity
             android:name=".ToolBar"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".Almeida"
             android:exported="false" />
-
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".Ficha_Matriculacion"
+            android:exported="false" />
     </application>
 
 </manifest>

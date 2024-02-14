@@ -1,7 +1,12 @@
 package com.ggvc.practicaobjetoslogicosmoviliipa2023;
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,120 +18,147 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText txtCedula, txtNombre, txtPlaca, txtFbVehiculo, txtMarca, txtColor, txtTipo, txtValor, txtMultas;
-    private Button btnEnviar;
-    private Toolbar toolbar1;
-    private RadioButton rbtoyota, rbmazda;
-    private ProgressBar progressBar;
-    private TextView txtProgresoNumerico;
-
+    TextView txvCedula, txvNombres, txvValorPlaca, txvValorAnio, txvValorMarca, txvValorMultas, txvValorTotal, txvTipo;
+    private static final String CHANNEL_ID= "canal";
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar1 = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar1);
+        txvCedula = findViewById(R.id.tvCedula);
+        txvNombres = findViewById(R.id.tvNombres);
+        txvTipo = findViewById(R.id.tvTipo);
+        txvValorPlaca = findViewById(R.id.tvValorPlaca);
+        txvValorAnio = findViewById(R.id.tvValorAnio);
+        txvValorMarca = findViewById(R.id.tvValorMarca);
+        txvValorMultas = findViewById(R.id.tvValorMultas);
+        txvValorTotal = findViewById(R.id.tvTotal);
+        Button btnregresar = findViewById(R.id.btRegresa);
 
-        txtCedula = findViewById(R.id.txtCedula);
-        txtNombre = findViewById(R.id.txtNombre);
-        txtPlaca = findViewById(R.id.txtPlaca);
-        txtFbVehiculo = findViewById(R.id.txtAnio);
-        rbtoyota = findViewById(R.id.marToyota);
-        rbmazda = findViewById(R.id.marMazda);
-        txtMarca = findViewById(R.id.txtMarca);
-        txtColor = findViewById(R.id.txtColor);
-        txtTipo = findViewById(R.id.txtTipoV);
-        txtValor = findViewById(R.id.TXTvALOR);
-        txtMultas = findViewById(R.id.txtMultas);
-        btnEnviar = findViewById(R.id.btnCalcular);
-        progressBar = findViewById(R.id.barra_datos);
-        txtProgresoNumerico = findViewById(R.id.txtProgresoNumerico);
-        progressBar.setMax(100);
-        progressBar.setProgress(0);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
+            generarNoticacionCanal();
+        }else{
+            generarNoticacionSinCanal();
+        }
 
-        addTextWatcher(txtCedula);
-        addTextWatcher(txtNombre);
-        addTextWatcher(txtPlaca);
-        addTextWatcher(txtFbVehiculo);
-        addTextWatcher(txtMarca);
-        addTextWatcher(txtColor);
-        addTextWatcher(txtTipo);
-        addTextWatcher(txtValor);
-        addTextWatcher(txtMultas);
+        Bundle datosV = getIntent().getExtras();
+        String cedulaP = datosV.getString("cedulaP");
+        String nombresP = datosV.getString("nombresP");
+        String marcaV = datosV.getString("marcaV");
+        String tipoV = datosV.getString("tipoV");
+        String colorV = datosV.getString("colorV");
+        String placaV = datosV.getString("placaV");
+        Integer anioV = datosV.getInt("anioV");
+        Integer valorV = datosV.getInt("valorV");
+        Integer multasV = datosV.getInt("multasV");
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        double valorPlaca = this.calcularValorRenovacionPlacas(cedulaP,placaV);
+        double valorAnio = this.calcularMultaContaminacion(anioV);
+        double valorMarca = this.calcularValorMatriculacion(marcaV,tipoV,valorV);
+        double valorMultas = this.calcularMultaPorMultas(multasV);
+        double valorTotal = valorPlaca + valorAnio + valorMarca + valorMultas;
+
+        txvCedula.setText(cedulaP);
+        txvNombres.setText(nombresP);
+        txvTipo.setText(tipoV+" "+marcaV+" "+colorV);
+        txvValorPlaca.setText("$"+valorPlaca);
+        txvValorAnio.setText("$"+valorAnio);
+        txvValorMarca.setText("$"+valorMarca);
+        txvValorMultas.setText("$"+valorMultas);
+        txvValorTotal.setText("$"+valorTotal);
+
+        btnregresar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                progressBar.setProgress(100);
-                txtProgresoNumerico.setText("100%");
-
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Pago_Activity.class);
                 startActivity(intent);
             }
         });
     }
+    public double calcularValorRenovacionPlacas(String cedula, String placa) {
+        int sueldoBasico = 435;
+        if (cedula.startsWith("1") && placa.contains("I")) {
 
-
-    @SuppressLint("NonConstantResourceId")
-
-
-
-    private void addTextWatcher(final EditText editText) {
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                int progress = calculateProgress();
-                progressBar.setProgress(progress);
-                txtProgresoNumerico.setText(progress + "%");
-            }
-        });
-    }
-
-    private int calculateProgress() {
-        int totalFields = 10;
-        int filledFields = 0;
-
-        if (!txtCedula.getText().toString().isEmpty()) filledFields++;
-        if (!txtNombre.getText().toString().isEmpty()) filledFields++;
-        if (!txtPlaca.getText().toString().isEmpty()) filledFields++;
-        if (!txtFbVehiculo.getText().toString().isEmpty()) filledFields++;
-
-        if ((rbtoyota != null && rbtoyota.isChecked()) || (rbmazda != null && rbmazda.isChecked())) {
-            filledFields++;
+            double porcentajeRenovacion = 0.05;
+            double valorPlaca = sueldoBasico * porcentajeRenovacion;
+            return valorPlaca;
         }
-
-        if (((rbtoyota != null && rbtoyota.isChecked()) || (rbmazda != null && rbmazda.isChecked())) && txtMarca.getText().toString().isEmpty()) {
-            filledFields++;
-        }
-
-        if (!txtColor.getText().toString().isEmpty()) filledFields++;
-        if (!txtTipo.getText().toString().isEmpty()) filledFields++;
-        if (!txtValor.getText().toString().isEmpty()) filledFields++;
-        if (!txtMultas.getText().toString().isEmpty()) filledFields++;
-
-        return (filledFields * 100) / totalFields;
+        return 0;
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
+    public double calcularMultaContaminacion(int anioFabricacion) {
+
+        if (anioFabricacion < 2010) {
+
+            double porcentajeMulta = 0.02;
+            int aniosDeContaminacion = 2010 - anioFabricacion;
+            double valorAnio = aniosDeContaminacion * porcentajeMulta;
+            return valorAnio;
+        }
+        return 0;
+    }
+    public double calcularValorMatriculacion(String marca, String tipo, int valorVehiculo) {
+        // Verifica la marca y el tipo del vehículo y calcula el valor de matriculación según las condiciones
+        if (marca.equals("TOYOTA") && tipo.equals("JEEP")) {
+            // 8% del valor del vehículo
+            double porcentajeMatriculacion = 0.08;
+            double valorMarca = valorVehiculo * porcentajeMatriculacion;
+            return valorMarca;
+        } else if (marca.equals("TOYOTA") && tipo.equals("CAMIONETA")) {
+
+            double porcentajeMatriculacion = 0.12;
+            double valorMarca = valorVehiculo * porcentajeMatriculacion;
+            return valorMarca;
+        } else if (marca.equals("MAZDA") && tipo.equals("CAMIONETA")) {
+
+            double porcentajeMatriculacion = 0.10;
+            double valorMarca = valorVehiculo * porcentajeMatriculacion;
+            return valorMarca;
+        } else if (marca.equals("FORD") && tipo.equals("AUTOMOVIL")) {
+
+            double porcentajeMatriculacion = 0.09;
+            double valorMarca = valorVehiculo * porcentajeMatriculacion;
+            return valorMarca;
+        }
+        return 0;
+    }
+    public double calcularMultaPorMultas(int cantidadMultas) {
+        int sueldoBasico = 435;
+        if (cantidadMultas > 0) {
+            double porcentajeMulta = 0.25;
+            double valorMulta = sueldoBasico * porcentajeMulta;
+            return valorMulta;
+        }
+        return 0;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void generarNoticacionCanal(){
+        NotificationChannel channel=new NotificationChannel(CHANNEL_ID,"NEW", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.createNotificationChannel(channel);
+        generarNoticacionSinCanal();
+    }
+    public void generarNoticacionSinCanal(){
+
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(getApplicationContext(),CHANNEL_ID)
+                .setSmallIcon(R.drawable.icono)
+                .setContentTitle("Ficha vehicular mb")
+                .setContentText("Aplicación que permite ingresar usuario")
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Ficha Vehicular"))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+
+
+
+
     }
 }

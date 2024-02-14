@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ficha_Matriculacion">
+
+    <ScrollView
+        android:id="@+id/FvScroll2"
+        android:layout_width="509dp"
+        android:layout_height="632dp"
+        android:layout_marginTop="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CEDULA"
+                android:textColor="#00BCD4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtCedulaf"
+                android:layout_width="403dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOMBRE"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtNombref2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APELLIDO"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtApellidof"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COLOR VEHICULO"
+                android:textColor="#2196F3"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtColorf2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COSTO VEHICULO"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtCostof4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIPO DE VEHICULO"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="36dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="camioneta" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="automovil" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MARCA DEL VEHICULO"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="36dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NISSAN" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FORD" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:text="Precio Vehiculo" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="403dp"
+                android:layout_height="wrap_content"
+                android:text="MULTAS"
+                android:textColor="#03A9F4"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnProcesar"
+                android:layout_width="406dp"
+                android:layout_height="wrap_content"
+                android:onClick="procesar"
+                android:text="procesar" />
+
+            <Button
+                android:id="@+id/btnCalificar"
+                android:layout_width="410dp"
+                android:layout_height="wrap_content"
+                android:text="Calificar" />
+
+            <TextView
+                android:id="@+id/txtProgreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Progreso: 0%" />
+
+            <ProgressBar
+                android:id="@+id/progreso"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txtFicha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FICHA VEHICULAR"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        tools:layout_editor_absoluteX="138dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="227dp"
+        android:layout_height="39dp"
+        android:text="DATOS DEL PROPIETARIO"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="105dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
