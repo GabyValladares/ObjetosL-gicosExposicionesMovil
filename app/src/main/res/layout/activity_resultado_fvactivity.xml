@@ -182,11 +182,11 @@
 
     <Button
         android:id="@+id/btnRegresar"
-        android:layout_width="98dp"
-        android:layout_height="40dp"
+        android:layout_width="120dp"
+        android:layout_height="41dp"
         android:text="Regresar"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="288dp"
-        tools:layout_editor_absoluteY="57dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="728dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
